@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 18px;
+
+  background-image: url('./images/bg-pattern-bottom.svg'),
+    url('./images/bg-pattern-top.svg');
+  background-repeat: no-repeat, no-repeat;
+  background-size: 1000px, 1000px;
+  background-position: right -300px bottom -600px, top -600px left -300px;
+  background-color: hsl(185, 75%, 39%);
+}
+
+.card {
+  width: 309.6px;
+  height: 330.3px;
+  background-color: white;
+
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  /* hidding the edges of bg pattern card */
+  overflow: hidden;
+  z-index: 0;
+
+  box-shadow: 0px 0px 8px hsl(229, 23%, 23%, 0.4);
+}
+
+.bg-pattern-card {
+  position: absolute;
+  width: 309.6px;
+
+  /* i want the card to take remainder of the
+    space available from centering and aligning
+    profile-container. the profile pic at -50%
+    should appear 50% over this bg
+   */
+  /* height: 42%; */
+
+  top: 0;
+  z-index: -1;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  position: absolute;
+  top: 22%;
+
+  /* i didn't know you could do this! xD 
+
+  saves creating div and positioning behind pic.
+  note give pic height and width, so you can 
+  copy this for the div (and make it slightly larger
+  */
+  border: 5px solid white;
+}
+
+.profile-container {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 8%;
+  align-items: center;
+
+  gap: 0.5rem;
+
+  flex: 3;
+}
+
+.profile-container .name-and-age {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.profile-container .name {
+  font-size: small;
+  font-weight: 700;
+}
+
+.profile-container .age {
+  font-size: small;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.profile-container .location {
+  font-size: x-small;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.stats-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+.container .count {
+  font-size: small;
+  font-weight: 700;
+}
+
+.container .metric {
+  font-size: xx-small;
+  opacity: 0.4;
+  letter-spacing: 0.05rem;
+}
+
+hr {
+  border: 0.5px solid grey;
+  opacity: 0.5;
+  width: 100%;
+}
+
+@media (max-width: 520px) {
+  body {
+    background-image: url('./images/bg-pattern-bottom.svg'),
+      url('./images/bg-pattern-top.svg');
+
+    background-repeat: no-repeat, no-repeat;
+    background-size: 600px, 600px;
+    background-position: right -400px bottom -300px, top -400px left -300px;
+    background-color: hsl(185, 75%, 39%);
+  }
+}
